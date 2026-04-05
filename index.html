@@ -1,177 +1,458 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kalaakaari — Creative Agency</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Yatra+One&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Yatra+One&family=Noto+Sans+Devanagari:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=3" />
+  <link rel="stylesheet" href="css/brutalist-inject.css?v=3" />
 </head>
 <body>
+
+  <!-- ─── CUSTOM CURSOR ───────────────────────────────── -->
+  <div id="customCursor" class="custom-cursor" aria-hidden="true">क</div>
+
+  <!-- ─── BRAND ETYMOLOGY PANEL ────────────────────────── -->
+  <div class="brand-panel" id="brandPanel" aria-hidden="true">
+    <button class="brand-panel__close" id="brandPanelClose" aria-label="Close">✕</button>
+    <div class="brand-panel__inner">
+
+      <div class="brand-panel__word-display">
+        <span class="bp-kala-part">KALAA</span><span class="bp-kaari-part">KAARI</span>
+      </div>
+      <div class="bp-deva-big">कलाकारी</div>
+      <div class="bp-roman">kalaakaari · noun · Hindi</div>
+
+      <div class="brand-panel__split">
+        <div class="brand-panel__part">
+          <span class="bpart-deva">कला</span>
+          <span class="bpart-roman">kalaa</span>
+          <span class="bpart-meaning">Art · Craft · Skill</span>
+        </div>
+        <span class="brand-panel__plus">+</span>
+        <div class="brand-panel__part">
+          <span class="bpart-deva">कारी</span>
+          <span class="bpart-roman">kaari</span>
+          <span class="bpart-meaning">Maker · Creator · Doer</span>
+        </div>
+      </div>
+
+      <div class="brand-panel__divider"></div>
+
+      <p class="brand-panel__desc">
+        We are the <em>kalakars</em> — artists, makers, and storytellers of India's digital age. Where the ancient craft of <em>kala</em> meets the velocity of modern advertising.
+      </p>
+
+      <div class="brand-panel__tags">
+        <span>विज्ञापन</span><span>Ad Work</span>
+        <span>कला</span><span>Fine Craft</span>
+        <span>नई दिल्ली</span><span>New Delhi</span>
+        <span>ब्रांड</span><span>Branding</span>
+      </div>
+
+      <div class="brand-panel__coords">28.6139° N · 77.2090° E · नई दिल्ली</div>
+    </div>
+  </div>
+  <div class="brand-panel__backdrop" id="brandPanelBackdrop"></div>
 
   <!-- ─── NAV ─────────────────────────────────────────── -->
   <nav class="nav" id="navbar">
     <div class="nav__inner">
-      <a href="#" class="nav__logo">kalaakaari</a>
+      <button class="nav__logo" id="brandLogoBtn" aria-label="About Kalaakaari">kalaakaari</button>
       <ul class="nav__links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#industries">Industries</a></li>
-        <li><a href="#portfolio">Work</a></li>
-        <li><a href="delhi.html">Relive Delhi</a></li>
-        <li><a href="#contact" class="nav__cta">Let's Talk</a></li>
+        <li><a href="#services" data-en="Services" data-hi="सेवाएं">Services</a></li>
+        <li><a href="#industries" data-en="Industries" data-hi="उद्योग">Industries</a></li>
+        <li><a href="#portfolio" data-en="Work" data-hi="काम">Work</a></li>
+        <li><a href="delhi.html" data-en="Relive Delhi" data-hi="दिल्ली जीएं">Relive Delhi</a></li>
+        <li><a href="#contact" class="nav__cta" data-en="Let's Talk" data-hi="बात करें">Let's Talk</a></li>
       </ul>
-      <button class="nav__burger" id="burger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav__controls">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="tt-icon tt-dark">☾</span>
+          <span class="tt-icon tt-light">☀</span>
+        </button>
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+          <span class="lt-en">EN</span>
+          <span class="lt-sep">/</span>
+          <span class="lt-hi">हि</span>
+        </button>
+        <button class="nav__burger" id="burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
   <!-- ─── HERO ─────────────────────────────────────────── -->
-  <section class="hero" id="home">
-    <div class="hero__bg-flow"></div>
-    <div class="hero__bg-mask"></div>
-    
-    <div class="hero__content">
-      <p class="hero__eyebrow">Delhi-based Creative Agency</p>
-      <h1 class="hero__headline">
-        <span class="hero__brand-deva">कलाकार</span>
-        <div class="hero__pressure-wrap" id="heroPressure"></div>
-        <span class="hero__brand-latin">KALAAKAARI</span>
-      </h1>
-      <p class="hero__tagline"><em>Be an Artist, Not a Laborer</em> — Turning launches into culture, brands into movements.</p>
-      <div class="hero__vibes">
-        <span class="vibe-pill">Culture</span>
-        <span class="vibe-pill">Rap</span>
-        <span class="vibe-pill">Chai Sutta</span>
-        <span class="vibe-pill">Food</span>
-        <span class="vibe-pill">Art is Not a Crime</span>
-        <span class="vibe-pill">Delhi</span>
-      </div>
-      <div class="hero__actions">
-        <a href="#portfolio" class="btn btn--primary">See Our Work</a>
-        <a href="#contact"   class="btn btn--ghost">Get In Touch</a>
-      </div>
+  <section class="new-hero" id="home">
+    <img alt="Delhi Skyline India Gate" class="new-hero__bg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFLr29pc3pCPAe7TxYA8-RxuzDBLEO8Z8FmMFiO-nbpuGVKotKLbCZ3ry8gQL74ls8ng60uKw9fZf0a7uGYqqg00Zy8zXZln9DjtBT8yiE1MxXPM6dyzwV0YAEpL2OiwrZY4CWf2BdXOvnbUtNX2xyZQufN_mq4HEL0z7SPaglPQX8m38ogZC_jQZxbXjaqOU8iVWpol54z284EPk7AQ8tGSjppCPpCuuIgTc7rXFxVp_Fo9DjhI9SxFIyWNwNXLBE_ChQMznE9I6T" />
+    <img alt="Canvas Texture" class="new-hero__texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf-tVOR5Xo5kFPux2TKjij8PSsnkcBbeqXc0diBOtUhNKwiXCgnWlOoODuiNz6XdzCGDgciMnvvckoABLrNBhgZ4RpASWoXDbuGKjJ-1DT0xkx_CGwpsS84vy8LMLBDR7ZS9ZSN2xXqtHWPb7ZYy69QijjotXKZFiQL8aJaUjz-fJrxyQFtVJAFxa9nIWBcDJRPymXoXIxqyYsy1rspkzYEZv26NOBzJ87y1OFM38vE0TuE0HAGWAbTmtCMMdVxc_NW7fsQoqK_uuS" />
+
+    <!-- MagnetLines hero decoration -->
+    <div id="magnetLinesHero" class="hero__magnet" aria-hidden="true"></div>
+
+    <!-- Atmospheric Hindi background text -->
+    <div class="hero-hindi-bg" aria-hidden="true">
+      <span class="hh-word hh-kala">कला</span>
+      <span class="hh-word hh-kaari">कारी</span>
+      <span class="hh-word hh-srijan">सृजन</span>
     </div>
-    
-    <div class="hero__scroll-hint">
-      <div class="hero__scroll-line"></div>
-      <span>EXPLORE</span>
+
+    <div class="new-hero__inner">
+      <div class="eyebrow">
+        <span class="eyebrow-line"></span>
+        <span class="eyebrow-text" data-en="The Kalakar Collective · नई दिल्ली" data-hi="कलाकार समूह · नई दिल्ली">The Kalakar Collective · नई दिल्ली</span>
+      </div>
+
+      <h1>
+        <span class="white" data-en="We Are The" data-hi="हम हैं">We Are The</span>
+        <span class="green hero-brand-text">KALAAKAARI.</span>
+        <span class="hero-deva-sub" aria-hidden="true">कलाकारी</span>
+      </h1>
+
+      <div class="new-hero__layout">
+        <div class="new-hero__desc">
+          <p>
+            Born from <strong>Delhi's chaos</strong> and <strong class="green">obsessive craft</strong>.<br>
+            <span id="heroTypewriter" class="hero-typewriter"></span>
+          </p>
+          <div class="new-hero__actions">
+            <a href="#portfolio" class="btn-large">
+              <span data-en="See Our Work" data-hi="हमारा काम देखें">See Our Work</span>
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+            <a href="#manifesto" class="btn-link" data-en="Our Creed" data-hi="हमारा विश्वास">Our Creed</a>
+          </div>
+        </div>
+
+        <div class="new-hero__meta">
+          <div class="meta-row">
+            <span class="meta-label" data-en="Founded" data-hi="स्थापित">Founded</span>
+            <span class="meta-val">2018</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label" data-en="Craft" data-hi="क्षमताएं">Craft</span>
+            <span class="meta-val" data-en="Ad Craft / Brand Identity / Culture" data-hi="विज्ञापन / पहचान / संस्कृति">Ad Craft / Brand Identity / Culture</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-label" data-en="Base" data-hi="स्थान">Base</span>
+            <span class="meta-val">28.6139° N, 77.2090° E</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ─── CURVED LOOP ─────────────────────────────────── -->
-  <div id="curvedLoopWrap" aria-hidden="true"></div>
+  <!-- ─── MARQUEE ──────────────────────────────────────── -->
+  <section class="new-marquee angled-bottom">
+    <div class="new-marquee__track">
+      <span>MAKE CULTURE • संस्कृति बनाओ • NOT JUST CONTENT • बल्कि कला • THINK BOLD • साहसी सोचो • ACT FAST • तेज़ चलो • BE TRUE • कलाकार रहो • KALA × KAARI • कला × कारी • MAKE CULTURE • संस्कृति बनाओ • NOT JUST CONTENT • बल्कि कला • THINK BOLD • साहसी सोचो •</span>
+    </div>
+  </section>
+
+  <!-- ─── STATS BAR ──────────────────────────────────────── -->
+  <section class="stats-bar angled-top">
+    <div class="container">
+      <div class="stats-bar__grid">
+        <div class="stat-item reveal">
+          <div class="stat-num-wrap">
+            <span class="stat-num" data-target="50">0</span><span class="stat-suffix">+</span>
+          </div>
+          <span class="stat-label" data-en="Brands" data-hi="ब्रांड">Brands</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item reveal">
+          <div class="stat-num-wrap">
+            <span class="stat-num" data-target="200">0</span><span class="stat-suffix">+</span>
+          </div>
+          <span class="stat-label" data-en="Campaigns" data-hi="अभियान">Campaigns</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item reveal">
+          <div class="stat-num-wrap">
+            <span class="stat-num" data-target="7">0</span><span class="stat-suffix"></span>
+          </div>
+          <span class="stat-label" data-en="Years Active" data-hi="सक्रिय वर्ष">Years Active</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item reveal">
+          <div class="stat-num-wrap">
+            <span class="stat-num" data-target="100">0</span><span class="stat-suffix">%</span>
+          </div>
+          <span class="stat-label" data-en="Dilli ka Dil" data-hi="दिल्ली का दिल">Dilli ka Dil</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── MANIFESTO ──────────────────────────────────────── -->
+  <section class="manifesto" id="manifesto">
+    <div class="manifesto__deva-ghost" aria-hidden="true">कला</div>
+    <div class="manifesto__inner">
+      <div class="manifesto__left">
+        <span class="manifesto__eyebrow">// Our Creed</span>
+        <div class="manifesto__big">
+          <span class="manifesto__line">KALA IS</span>
+          <span class="manifesto__line manifesto__line--amber">THE SOUL.</span>
+          <span class="manifesto__line">KAARI IS</span>
+          <span class="manifesto__line manifesto__line--amber">THE FIRE.</span>
+        </div>
+        <p class="manifesto__body">
+          Born in the <em>chaos of Delhi</em> — where centuries of craft collide with the ruthless velocity of the digital age. Every brand we touch becomes something larger than a campaign. Something that doesn't just reach people — it <em>moves</em> them.
+          <br><br>
+          We don't execute briefs. We <em>interrogate</em> them. We don't follow trends — we <em>set</em> them. Because Kalaakaari is not a service. It's a <em>bhavna</em> — a feeling.
+        </p>
+      </div>
+      <div class="manifesto__right">
+        <div class="manifesto__card">
+          <span class="manifesto__card-deva">कलाकारी</span>
+          <p class="manifesto__card-quote">"We don't sell brands.<br>We ignite them."</p>
+          <div class="manifesto__card-bar"></div>
+          <span class="manifesto__card-sub">Kalaakaari Manifesto · 2018</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ABOUT / THE KALAKARS ──────────────────────────── -->
+  <section class="section about-section" id="about">
+    <div class="about__ghost-deva" aria-hidden="true">कलाकार</div>
+    <div class="container">
+      <div class="about__inner">
+        <div class="about__left reveal">
+          <span class="section__label">
+            <span data-en="Who We Are" data-hi="हम कौन हैं">Who We Are</span>
+            <span class="section__label-deva" aria-hidden="true">// हम कौन हैं</span>
+          </span>
+          <h2 class="about__headline">THE<br><em>KALA<span class="about__headline--amber">KARS.</span></em></h2>
+          <p class="about__body">We started in 2018 — a rented room in Hauz Khas, three laptops, and a refusal to make boring work. Not safe work. Not committee-approved work. <em>Work that made people feel something.</em></p>
+          <p class="about__body">Seven years and 50+ brands later, we still run on the same fuel: craft, conviction, and a deep love for Delhi's beautiful chaos. We are not a vendor. We are your creative conscience.</p>
+        </div>
+        <div class="about__right reveal">
+          <div class="about__pillars">
+            <div class="about__pillar">
+              <span class="about__pillar-num">01</span>
+              <div class="about__pillar-body">
+                <span class="about__pillar-title">CRAFT FIRST</span>
+                <p class="about__pillar-desc">Every pixel, every word, every frame earns its place or gets cut. No filler. No fat.</p>
+              </div>
+            </div>
+            <div class="about__pillar">
+              <span class="about__pillar-num">02</span>
+              <div class="about__pillar-body">
+                <span class="about__pillar-title">TRUTH OVER TREND</span>
+                <p class="about__pillar-desc">We won't do what's popular if it isn't right for your brand. Period.</p>
+              </div>
+            </div>
+            <div class="about__pillar">
+              <span class="about__pillar-num">03</span>
+              <div class="about__pillar-body">
+                <span class="about__pillar-title">DELHI RUNS DEEP</span>
+                <p class="about__pillar-desc">Our city's chaos, colour, and contradictions are baked into everything we make.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ─── SERVICES ─────────────────────────────────────── -->
   <section class="section services" id="services">
     <div class="container">
       <div class="section__header reveal">
-        <p class="section__label">What We Do</p>
-        <h2 class="section__title">Our Services</h2>
+        <p class="section__label">
+          <span data-en="Our Craft" data-hi="हम क्या करते हैं">Our Craft</span>
+          <span class="section__label-deva" aria-hidden="true">// हमारी कला</span>
+        </p>
+        <h2 class="section__title" data-en="What We Make" data-hi="हमारी सेवाएं">What We Make</h2>
       </div>
-      <div class="services__list">
-        <div class="service-row reveal">
-          <span class="service-row__num">01</span>
-          <h3 class="service-row__name">Ad Production</h3>
-          <p class="service-row__desc">High-impact ad creatives that stop the scroll and drive action.</p>
+    </div>
+    <div id="flowingMenuServices"></div>
+  </section>
+
+  <!-- ─── PROCESS ─────────────────────────────────────────── -->
+  <section class="section process-section" id="process">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__label">
+          <span data-en="How We Work" data-hi="हम कैसे काम करते हैं">How We Work</span>
+          <span class="section__label-deva" aria-hidden="true">// हमारी प्रक्रिया</span>
+        </p>
+        <h2 class="section__title" data-en="The Process" data-hi="हमारी प्रक्रिया">The Process</h2>
+      </div>
+      <div class="process__track">
+        <div class="process__step reveal">
+          <div class="process__step-head">
+            <span class="process__num">01</span>
+            <div class="process__connector"></div>
+          </div>
+          <h3 class="process__title">BRIEF &amp; DECODE</h3>
+          <p class="process__desc">We don't just listen to what you say — we hear what you mean. Deep-dive sessions to uncover your brand's true soul, not just the surface ask.</p>
         </div>
-        <div class="service-row reveal">
-          <span class="service-row__num">02</span>
-          <h3 class="service-row__name">Social Media Management</h3>
-          <p class="service-row__desc">Strategy, scheduling, and community building across all platforms.</p>
+        <div class="process__step reveal">
+          <div class="process__step-head">
+            <span class="process__num">02</span>
+            <div class="process__connector"></div>
+          </div>
+          <h3 class="process__title">CONCEIVE</h3>
+          <p class="process__desc">Ideas that come from research, not thin air. We map culture, competitors, and consumers before we touch a single design tool.</p>
         </div>
-        <div class="service-row reveal">
-          <span class="service-row__num">03</span>
-          <h3 class="service-row__name">Scripting</h3>
-          <p class="service-row__desc">Compelling scripts for reels, ads, and video content that convert.</p>
+        <div class="process__step reveal">
+          <div class="process__step-head">
+            <span class="process__num">03</span>
+            <div class="process__connector"></div>
+          </div>
+          <h3 class="process__title">CREATE</h3>
+          <p class="process__desc">This is where craft lives. Scripts get written, frames get composed, logos take shape. No half-measures. No templates. No compromises.</p>
         </div>
-        <div class="service-row reveal">
-          <span class="service-row__num">04</span>
-          <h3 class="service-row__name">Content Production</h3>
-          <p class="service-row__desc">End-to-end content creation — photography, video, and more.</p>
-        </div>
-        <div class="service-row reveal">
-          <span class="service-row__num">05</span>
-          <h3 class="service-row__name">Graphic Designing</h3>
-          <p class="service-row__desc">Visual identities and assets that make your brand unforgettable.</p>
-        </div>
-        <div class="service-row reveal">
-          <span class="service-row__num">06</span>
-          <h3 class="service-row__name">Branding &amp; Animation</h3>
-          <p class="service-row__desc">Motion graphics and brand systems that bring your story to life.</p>
-        </div>
-        <div class="service-row reveal">
-          <span class="service-row__num">07</span>
-          <h3 class="service-row__name">Performance Marketing</h3>
-          <p class="service-row__desc">Data-driven campaigns optimised for measurable ROI.</p>
+        <div class="process__step reveal">
+          <div class="process__step-head">
+            <span class="process__num">04</span>
+            <div class="process__connector process__connector--last"></div>
+          </div>
+          <h3 class="process__title">LAUNCH &amp; AMPLIFY</h3>
+          <p class="process__desc">We don't just hand over files. We track, analyse, and optimise until every rupee of your budget punches above its weight.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ─── INDUSTRIES ───────────────────────────────────── -->
-  <section class="section industries" id="industries">
+  <section class="section industries angled-both" id="industries">
     <div class="container">
       <div class="section__header reveal">
-        <p class="section__label">Where We Excel</p>
-        <h2 class="section__title">Industries We Serve</h2>
+        <p class="section__label">
+          <span data-en="Where We Excel" data-hi="जहाँ हम माहिर हैं">Where We Excel</span>
+          <span class="section__label-deva" aria-hidden="true">// हमारी महारत</span>
+        </p>
+        <h2 class="section__title" data-en="Industries We Serve" data-hi="हमारे उद्योग क्षेत्र">Industries We Serve</h2>
       </div>
       <div id="industriesList" class="reveal"></div>
     </div>
   </section>
 
-  <!-- ─── PORTFOLIO ────────────────────────────────────── -->
-  <section class="section portfolio" id="portfolio">
+  <!-- ─── BENTO GRID PORTFOLIO ─────────────────────────── -->
+  <section class="new-bento-section angled-both" id="portfolio">
+    <div class="bento-grid">
+      <div class="bento-card bento-1">
+        <img alt="Abstract Brand Design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuZ__Dm3Tj1JYx3lgEOg7fpPrNPkBnAtLLXt_pLZWE9MYArrwMLKPGFMvDWz9S6nuPZTgD37VFYTRJJDPa2ha6t8hdq8I1iCvHr52zeep1GFbAAPIUiNDLUnHZP5K7FTVSJEvKiPWUM_n47WozB3HaXQzDmgqOEz8H2nFJM2bFE9_PT6r4x-EMx5kZhiE9JDSSfxEMa1yDIOVjeJFLtn1wTUcrob2aRCuOyzEhTVpbzGP5nTimRJY0BGEi9QkPHD5WvWMFe5Hqx6S3" />
+        <div class="bento-card__content">
+          <span class="bento-card__tag">Campaign</span>
+          <h3 class="bento-card__title">Project Neon Genesis</h3>
+        </div>
+      </div>
+      <div class="bento-card bento-2">
+        <img alt="Typography Focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzyQ5uU3mpWQI5tAtsmqk-NkhE1_0SN0yBfrHW1phkZ0n9HTNP9XfN7VOFF1uDpgs62l0xKsRn6bBgBQ5kWJvAMxkJLA6VJZqedB8gKAUvMJeFvPcRT_hPLSwoH3NST9XASMgUeRubnGeC-n-PrAxHDeuebhfOZ38DPGYDZ_RjE0P_M39a2484H67_fl6PMIGxCKdaN7RskamaVDPb4RNuPi-4Dk_ohHOS8HfZsbV9TrOS9klnDamx-Pte8nl3BQwydFvwZ-xw1s-i" />
+        <div class="bento-card__content">
+          <span class="bento-card__tag">Visual Identity</span>
+          <h3 class="bento-card__title">Urban Rebirth</h3>
+        </div>
+      </div>
+      <div class="bento-card bento-3">
+        <img alt="Modern Landscape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBA8Aky14RZDTp7Hp58Nxf8XEESEQcbvwPAGny4pyo4Z8ucblqHYzDfgA5ARarNYJZz5E2waE2TxRT1FdP-Lkw6mrvL_VKZtBATfANr__XlTgsVYd-kGue2YEjcigo5ZtkyoZumEvTxQ9GG0vIiumSS3ql70hEvdJh81BJRQ1ebNndGsptINXyf2c4CV3ClZdZcFjnyjipXF6ul0B4QtE1Jg1BDFLE0zJ0Vus62lqohSqyYpyBaynfv5bcMQmVXOkL711Imkoxli84R" />
+      </div>
+      <div class="bento-card bento-4">
+        <span class="material-symbols-outlined">brush</span>
+        <p data-en="Art that moves. Work that lasts." data-hi="कला जो हिलाए। काम जो टिके।">Art that moves. Work that lasts.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── WORK GRID ───────────────────────────────────────── -->
+  <section class="section work-section" id="work">
     <div class="container">
       <div class="section__header reveal">
-        <p class="section__label">Our Work</p>
-        <div id="trueFocusWrap"></div>
+        <p class="section__label">
+          <span data-en="Selected Work" data-hi="हमारा काम">Selected Work</span>
+          <span class="section__label-deva" aria-hidden="true">// केस स्टडी</span>
+        </p>
+        <h2 class="section__title" data-en="Case Studies" data-hi="केस स्टडी">Case Studies</h2>
       </div>
-      <div class="portfolio__grid">
-        <div class="portfolio-card reveal">
-          <div class="portfolio-card__thumb" style="background:#c8a882;"></div>
-          <div class="portfolio-card__info">
-            <div><span class="portfolio-card__tag">Branding</span><h4>Project Name</h4></div>
-            <span class="portfolio-card__arrow">↗</span>
+      <div class="work__grid">
+        <div class="work-card reveal">
+          <div class="work-card__thumb work-card__thumb--1" data-letter="ह"></div>
+          <div class="work-card__info">
+            <span class="work-card__tag">Brand Identity</span>
+            <h3 class="work-card__title">Hauz Khas Collective</h3>
+            <p class="work-card__sub">Full identity system — logo, typography, colour, motion.</p>
           </div>
         </div>
-        <div class="portfolio-card reveal">
-          <div class="portfolio-card__thumb" style="background:#a07850;"></div>
-          <div class="portfolio-card__info">
-            <div><span class="portfolio-card__tag">Social Media</span><h4>Project Name</h4></div>
-            <span class="portfolio-card__arrow">↗</span>
+        <div class="work-card reveal">
+          <div class="work-card__thumb work-card__thumb--2" data-letter="न"></div>
+          <div class="work-card__info">
+            <span class="work-card__tag">Campaign</span>
+            <h3 class="work-card__title">Namkeen Republic</h3>
+            <p class="work-card__sub">360° launch campaign across digital &amp; OOH. 4.2M impressions.</p>
           </div>
         </div>
-        <div class="portfolio-card reveal">
-          <div class="portfolio-card__thumb" style="background:#89482a;"></div>
-          <div class="portfolio-card__info">
-            <div><span class="portfolio-card__tag">Ad Production</span><h4>Project Name</h4></div>
-            <span class="portfolio-card__arrow">↗</span>
+        <div class="work-card reveal">
+          <div class="work-card__thumb work-card__thumb--3" data-letter="त"></div>
+          <div class="work-card__info">
+            <span class="work-card__tag">Visual Identity</span>
+            <h3 class="work-card__title">Studio Tamas</h3>
+            <p class="work-card__sub">Brand identity for a contemporary art studio in Lodhi Colony.</p>
           </div>
         </div>
-        <div class="portfolio-card reveal">
-          <div class="portfolio-card__thumb" style="background:#4a3931;"></div>
-          <div class="portfolio-card__info">
-            <div><span class="portfolio-card__tag">Content</span><h4>Project Name</h4></div>
-            <span class="portfolio-card__arrow">↗</span>
+        <div class="work-card reveal">
+          <div class="work-card__thumb work-card__thumb--4" data-letter="ब"></div>
+          <div class="work-card__info">
+            <span class="work-card__tag">Social Media</span>
+            <h3 class="work-card__title">The Bombay Club</h3>
+            <p class="work-card__sub">Content strategy &amp; production — 0 to 180K followers in 8 months.</p>
           </div>
         </div>
-        <div class="portfolio-card reveal">
-          <div class="portfolio-card__thumb" style="background:#c8a882;"></div>
-          <div class="portfolio-card__info">
-            <div><span class="portfolio-card__tag">Animation</span><h4>Project Name</h4></div>
-            <span class="portfolio-card__arrow">↗</span>
+        <div class="work-card reveal">
+          <div class="work-card__thumb work-card__thumb--5" data-letter="आ"></div>
+          <div class="work-card__info">
+            <span class="work-card__tag">Content Production</span>
+            <h3 class="work-card__title">Aroha Jewels</h3>
+            <p class="work-card__sub">Product films &amp; editorial photography. Revenue up 3× post-campaign.</p>
           </div>
         </div>
-        <div class="portfolio-card reveal">
-          <div class="portfolio-card__thumb" style="background:#a07850;"></div>
-          <div class="portfolio-card__info">
-            <div><span class="portfolio-card__tag">Marketing</span><h4>Project Name</h4></div>
-            <span class="portfolio-card__arrow">↗</span>
+        <div class="work-card reveal">
+          <div class="work-card__thumb work-card__thumb--6" data-letter="उ"></div>
+          <div class="work-card__info">
+            <span class="work-card__tag">Branding &amp; Animation</span>
+            <h3 class="work-card__title">Urban Apothecary</h3>
+            <p class="work-card__sub">Motion identity system — logo animation, UI transitions, brand film.</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CLIENTS STRIP ───────────────────────────────── -->
+  <section class="clients-section angled-top">
+    <div class="clients-section__header container">
+      <div id="trueFocusWrap" class="reveal"></div>
+    </div>
+    <div class="clients-track-wrap">
+      <div class="clients-track">
+        <span class="cl-name">ZOMATO</span>
+        <span class="cl-name cl-deva">स्विगी</span>
+        <span class="cl-name">boAt</span>
+        <span class="cl-name cl-deva">नायका</span>
+        <span class="cl-name">MAMAEARTH</span>
+        <span class="cl-name cl-deva">लेंसकार्ट</span>
+        <span class="cl-name">BEWAKOOF</span>
+        <span class="cl-name cl-deva">मीशो</span>
+        <span class="cl-name">SUGAR</span>
+        <span class="cl-name cl-deva">मिंत्रा</span>
+        <!-- duplicate for seamless loop -->
+        <span class="cl-name">ZOMATO</span>
+        <span class="cl-name cl-deva">स्विगी</span>
+        <span class="cl-name">boAt</span>
+        <span class="cl-name cl-deva">नायका</span>
+        <span class="cl-name">MAMAEARTH</span>
+        <span class="cl-name cl-deva">लेंसकार्ट</span>
+        <span class="cl-name">BEWAKOOF</span>
+        <span class="cl-name cl-deva">मीशो</span>
+        <span class="cl-name">SUGAR</span>
+        <span class="cl-name cl-deva">मिंत्रा</span>
       </div>
     </div>
   </section>
@@ -182,21 +463,69 @@
     <div class="daily__map-mask"></div>
     <div class="container relative">
       <div class="section__header reveal">
-        <p class="section__label">Daily Check-ins</p>
-        <h2 class="section__title">Reviews &amp; Highlights</h2>
+        <p class="section__label">
+          <span data-en="The Word on the Street" data-hi="दिल्ली क्या कहती है">The Word on the Street</span>
+          <span class="section__label-deva" aria-hidden="true">// ग्राहक बोलते हैं</span>
+        </p>
+        <h2 class="section__title" data-en="People Are Talking" data-hi="लोग कह रहे हैं">People Are Talking</h2>
       </div>
       <div class="daily__content reveal">
         <div class="daily__sticker">
-           <p>"Kalaakaari transformed our brand identity overnight!"</p>
-           <span>— Studio XYZ</span>
+           <p>"Kalaakaari didn't just redesign our brand. They gave it a heartbeat."</p>
+           <span>— Studio Collective, Mumbai</span>
         </div>
         <div class="daily__sticker">
-           <p>"Best creative partners in Delhi. Hands down."</p>
-           <span>— The Local Cafe</span>
+           <p>"The only creative team in Delhi that actually gives a damn about craft. Every. Single. Time."</p>
+           <span>— Ananya K., Founder</span>
         </div>
         <div class="daily__sticker">
-           <p>"Incredible video production and scripting. Highly recommended!"</p>
-           <span>— Tech Startup</span>
+           <p>"Our reels went from invisible to 2M views. The Kalakars know exactly what they're doing."</p>
+           <span>— The Spice Route, Hauz Khas</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ─────────────────────────────────────────────── -->
+  <section class="section faq-section" id="faq">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__label">
+          <span data-en="Real Talk" data-hi="सीधी बात">Real Talk</span>
+          <span class="section__label-deva" aria-hidden="true">// सवाल-जवाब</span>
+        </p>
+        <h2 class="section__title" data-en="Got Questions?" data-hi="कोई सवाल?">Got Questions?</h2>
+      </div>
+      <div class="faq__list reveal">
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false">How do we start working together?</button>
+          <div class="faq__a" hidden>
+            <p>Simple. Hit "Let's Talk", tell us what you're building, and we'll set up a 30-minute call. No pitches, no decks — just an honest conversation about whether we're the right fit.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false">What's your minimum engagement?</button>
+          <div class="faq__a" hidden>
+            <p>We don't believe in cookie-cutter packages. Whether it's a one-off campaign or a long-term retainer, we scope each project based on what it actually needs — not what fits a rate card.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false">Do you work with brands outside Delhi?</button>
+          <div class="faq__a" hidden>
+            <p>Absolutely. Half our clients are in Mumbai, Bangalore, and beyond. Delhi is where we live; the internet is where we work. Remote collaboration is in our DNA.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false">How long does a typical project take?</button>
+          <div class="faq__a" hidden>
+            <p>A social media campaign can be live in 2 weeks. A full brand identity takes 6–10 weeks. We'll never rush craft, but we'll never miss a deadline either.</p>
+          </div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false">What makes Kalaakaari different from other agencies?</button>
+          <div class="faq__a" hidden>
+            <p>We're not a vendor. We're a creative conscience. We'll push back on briefs we think are wrong, refuse work we can't be proud of, and give you the creative partner you actually needed — not just the one you asked for.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -207,20 +536,24 @@
     <div class="container">
       <div class="contact__inner">
         <div class="contact__left reveal">
-          <p class="section__label">Say Hello</p>
-          <h2 class="contact__title">Let's build something<br /><span>amazing together.</span></h2>
+          <p class="section__label" data-en="Say Hello" data-hi="नमस्कार">Say Hello</p>
+          <h2 class="contact__title">
+            <span data-en="Let's make something" data-hi="मिलकर बनाएं कुछ">Let's make something</span>
+            <br />
+            <span data-en="the world won't forget." data-hi="जो दुनिया याद रखे।">the world won't forget.</span>
+          </h2>
           <div class="contact__details">
             <a href="mailto:business@kalaakaari.in" class="contact__link">
-              <span class="contact__link-label">Email</span>
+              <span class="contact__link-label" data-en="Email" data-hi="ईमेल">Email</span>
               business@kalaakaari.in
             </a>
             <a href="tel:+919582828371" class="contact__link">
-              <span class="contact__link-label">Phone</span>
+              <span class="contact__link-label" data-en="Phone" data-hi="फोन">Phone</span>
               +91 95828-28371
             </a>
             <div class="contact__link">
-              <span class="contact__link-label">Location</span>
-              Delhi, India
+              <span class="contact__link-label" data-en="Location" data-hi="स्थान">Location</span>
+              <span data-en="Delhi, India" data-hi="दिल्ली, भारत">Delhi, India</span>
             </div>
           </div>
         </div>
@@ -246,33 +579,68 @@
           <div class="form-group">
             <textarea id="message" rows="4" placeholder="Tell us about your project"></textarea>
           </div>
-          <button type="submit" class="btn btn--primary btn--full">Send Message →</button>
+          <button type="submit" class="btn btn--primary btn--full" data-en="Send Message →" data-hi="संदेश भेजें →">Send Message →</button>
         </form>
       </div>
     </div>
   </section>
 
   <!-- ─── FOOTER ───────────────────────────────────────── -->
-  <footer class="footer">
+  <footer class="footer footer--expanded">
     <div class="container">
-      <div class="footer__inner">
-        <p class="footer__logo">kalaakaari</p>
-        <p class="footer__copy">© 2025 Kalaakaari. All rights reserved.</p>
-        <div class="footer__socials">
-          <a href="#" aria-label="Instagram">IG</a>
-          <a href="#" aria-label="LinkedIn">LI</a>
-          <a href="#" aria-label="Behance">BE</a>
+      <div class="footer__grid">
+
+        <!-- Brand col -->
+        <div class="footer__col footer__col--brand">
+          <p class="footer__logo">kalaakaari</p>
+          <p class="footer__deva" aria-hidden="true">कलाकारी</p>
+          <p class="footer__tagline" data-en="Kala. Kaari. Culture. — Born in Delhi, made for the world." data-hi="कला. कारी. संस्कृति. — दिल्ली में जन्मे, दुनिया के लिए।">Kala. Kaari. Culture. — Born in Delhi, made for the world.</p>
+          <p class="footer__coords">28.6139° N · 77.2090° E</p>
         </div>
+
+        <!-- Services col -->
+        <div class="footer__col">
+          <h4 class="footer__col-title" data-en="Services" data-hi="सेवाएं">Services</h4>
+          <ul class="footer__links">
+            <li><a href="#services" data-en="Ad Production" data-hi="विज्ञापन निर्माण">Ad Production</a></li>
+            <li><a href="#services" data-en="Social Media" data-hi="सोशल मीडिया">Social Media</a></li>
+            <li><a href="#services" data-en="Content Production" data-hi="कंटेंट निर्माण">Content Production</a></li>
+            <li><a href="#services" data-en="Graphic Design" data-hi="ग्राफिक डिज़ाइन">Graphic Design</a></li>
+            <li><a href="#services" data-en="Performance Marketing" data-hi="परफॉर्मेंस मार्केटिंग">Performance Marketing</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact col -->
+        <div class="footer__col">
+          <h4 class="footer__col-title" data-en="Get In Touch" data-hi="संपर्क करें">Get In Touch</h4>
+          <ul class="footer__links">
+            <li><a href="mailto:business@kalaakaari.in">business@kalaakaari.in</a></li>
+            <li><a href="tel:+919582828371">+91 95828-28371</a></li>
+            <li><span data-en="New Delhi, India" data-hi="नई दिल्ली, भारत">New Delhi, India</span></li>
+          </ul>
+        </div>
+
+        <!-- Social col -->
+        <div class="footer__col footer__col--social">
+          <h4 class="footer__col-title" data-en="Follow" data-hi="फॉलो करें">Follow</h4>
+          <div class="footer__socials">
+            <a href="#" aria-label="Instagram">Instagram</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" aria-label="Behance">Behance</a>
+          </div>
+          <p class="footer__copy" data-en="© 2025 Kalaakaari." data-hi="© 2025 कलाकारी।">© 2025 Kalaakaari.</p>
+        </div>
+
       </div>
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="js/AnimatedList.js"></script>
   <script src="js/TextPressure.js"></script>
   <script src="js/CurvedLoop.js"></script>
   <script src="js/TrueFocus.js"></script>
   <script src="js/MagnetLines.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/SplashCursor.js"></script>
 </body>
 </html>
