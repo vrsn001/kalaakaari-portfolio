@@ -306,11 +306,11 @@
 
 /* ── Section label Devanagari suffix ── */
 .section__label-deva {
-  font-family: 'Noto Sans Devanagari', serif;
-  font-size: 0.75em;
-  font-weight: 400;
-  letter-spacing: 0;
-  color: rgba(212, 170, 76, 0.55);
+  font-family: 'Noto Sans Devanagari', 'DM Sans', serif;
+  font-size: 1em;
+  font-weight: 700;
+  letter-spacing: inherit;
+  color: var(--primary-container);
   margin-left: 0.4rem;
 }
 
