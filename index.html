@@ -6,9 +6,9 @@
   <title>Kalaakaari — Creative Agency</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Yatra+One&family=Noto+Sans+Devanagari:wght@400;600;700;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=3" />
-  <link rel="stylesheet" href="css/brutalist-inject.css?v=3" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500;600&family=Noto+Sans+Devanagari:wght@400;600;700;900&family=Playfair+Display:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=9" />
+  <link rel="stylesheet" href="css/brutalist-inject.css?v=9" />
 </head>
 <body>
 
@@ -58,31 +58,112 @@
   </div>
   <div class="brand-panel__backdrop" id="brandPanelBackdrop"></div>
 
+  <!-- ─── SIDE DRAWER ──────────────────────────────────── -->
+  <div class="side-drawer" id="sideDrawer" aria-hidden="true">
+    <button class="side-drawer__close" id="sideDrawerClose" aria-label="Close menu">✕</button>
+    <div class="side-drawer__content">
+
+      <div class="side-drawer__section">
+        <span class="side-drawer__eyebrow">// Industry</span>
+        <nav class="side-drawer__nav">
+          <a href="#industries">Food &amp; Beverage</a>
+          <a href="#industries">Fashion &amp; Lifestyle</a>
+          <a href="#industries">FMCG</a>
+          <a href="#industries">Restaurants</a>
+          <a href="#industries">Jewellery</a>
+          <a href="#industries">Beauty &amp; Wellness</a>
+          <a href="#industries">Finance</a>
+        </nav>
+      </div>
+
+      <div class="side-drawer__divider"></div>
+
+      <div class="side-drawer__section">
+        <span class="side-drawer__eyebrow">// Creative</span>
+        <nav class="side-drawer__nav">
+          <a href="#">Music</a>
+          <a href="#">Movies</a>
+          <a href="#">Word to Read</a>
+        </nav>
+      </div>
+
+      <div class="side-drawer__divider"></div>
+
+      <div class="side-drawer__meta">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="tt-icon tt-dark">☾ Dark Mode</span>
+          <span class="tt-icon tt-light">☀ Light Mode</span>
+        </button>
+        <button class="side-drawer__lang-btn" id="drawerLangToggle" aria-label="Switch language">
+          <span class="lt-en">EN</span>
+          <span class="lt-sep">/</span>
+          <span class="lt-hi">हि</span>
+        </button>
+        <a href="delhi.html" class="side-drawer__delhi-link">Relive Delhi →</a>
+      </div>
+
+    </div>
+    <div class="side-drawer__deva" aria-hidden="true">कलाकार</div>
+  </div>
+  <div class="side-drawer__backdrop" id="sideDrawerBackdrop"></div>
+
+  <!-- ─── FLOATING BUTTONS ──────────────────────────────── -->
+  <a href="#contact" class="float-btn float-btn--talk" aria-label="Let's Talk">
+    <span>Let's<br>Talk</span>
+  </a>
+  <a href="delhi.html" class="float-btn float-btn--delhi" aria-label="Relive Delhi">
+    <span>Relive<br>Delhi</span>
+  </a>
+
   <!-- ─── NAV ─────────────────────────────────────────── -->
   <nav class="nav" id="navbar">
     <div class="nav__inner">
-      <button class="nav__logo" id="brandLogoBtn" aria-label="About Kalaakaari">kalaakaari</button>
-      <ul class="nav__links">
-        <li><a href="#services" data-en="Services" data-hi="सेवाएं">Services</a></li>
-        <li><a href="#industries" data-en="Industries" data-hi="उद्योग">Industries</a></li>
-        <li><a href="#portfolio" data-en="Work" data-hi="काम">Work</a></li>
-        <li><a href="delhi.html" data-en="Relive Delhi" data-hi="दिल्ली जीएं">Relive Delhi</a></li>
-        <li><a href="#contact" class="nav__cta" data-en="Let's Talk" data-hi="बात करें">Let's Talk</a></li>
-      </ul>
-      <div class="nav__controls">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-          <span class="tt-icon tt-dark">☾</span>
-          <span class="tt-icon tt-light">☀</span>
+
+      <!-- LEFT: Bilingual art logo -->
+      <div class="nav__art">
+        <button class="nav__logo-btn" id="brandLogoBtn" aria-label="About Kalaakaari">
+          <span class="logo-hi">कला</span><span class="logo-x">×</span><span class="logo-en-half">KAARI</span>
+          <span class="logo-full">KALAAKAARI</span>
         </button>
+      </div>
+
+      <!-- CENTER: Language toggle -->
+      <div class="nav__center">
         <button class="lang-toggle" id="langToggle" aria-label="Switch language">
           <span class="lt-en">EN</span>
           <span class="lt-sep">/</span>
           <span class="lt-hi">हि</span>
         </button>
-        <button class="nav__burger" id="burger" aria-label="Menu">
+      </div>
+
+      <!-- RIGHT: Nav links + burger -->
+      <div class="nav__right">
+        <ul class="nav__links">
+          <li class="nav__item nav__item--drop">
+            <button class="nav__drop-btn" data-en="Art" data-hi="कला">Art</button>
+            <div class="nav__dropdown">
+              <a href="#portfolio" data-en="Content Portfolio" data-hi="कंटेंट पोर्टफोलियो">Content Portfolio</a>
+              <a href="#work-grid" data-en="Work Portfolio" data-hi="वर्क पोर्टफोलियो">Work Portfolio</a>
+            </div>
+          </li>
+          <li class="nav__item nav__item--drop">
+            <button class="nav__drop-btn" data-en="Craft" data-hi="क्राफ्ट">Craft</button>
+            <div class="nav__dropdown">
+              <a href="#portfolio" data-en="Marketing Portfolio" data-hi="मार्केटिंग पोर्टफोलियो">Marketing Portfolio</a>
+              <a href="#portfolio" data-en="Distribution Portfolio" data-hi="डिस्ट्रीब्यूशन">Distribution Portfolio</a>
+              <a href="#portfolio" data-en="Case Studies" data-hi="केस स्टडी">Case Studies</a>
+              <a href="#portfolio" data-en="Marketing Work" data-hi="मार्केटिंग वर्क">Marketing Work</a>
+            </div>
+          </li>
+          <li class="nav__item">
+            <a href="#services" data-en="Services" data-hi="सेवाएं">Services</a>
+          </li>
+        </ul>
+        <button class="nav__burger" id="burger" aria-label="Open menu">
           <span></span><span></span><span></span>
         </button>
       </div>
+
     </div>
   </nav>
 
@@ -104,11 +185,11 @@
     <div class="new-hero__inner">
       <div class="eyebrow">
         <span class="eyebrow-line"></span>
-        <span class="eyebrow-text" data-en="The Kalakar Collective · नई दिल्ली" data-hi="कलाकार समूह · नई दिल्ली">The Kalakar Collective · नई दिल्ली</span>
+        <span class="eyebrow-text" data-en="A Creative Agency · Based Out Of New Delhi" data-hi="एक क्रिएटिव एजेंसी · नई दिल्ली से">A Creative Agency · Based Out Of New Delhi</span>
       </div>
 
       <h1>
-        <span class="white" data-en="We Are The" data-hi="हम हैं">We Are The</span>
+        <span class="white hero-this-is" data-en="This Is" data-hi="यही है">This Is</span>
         <span class="green hero-brand-text">KALAAKAARI.</span>
         <span class="hero-deva-sub" aria-hidden="true">कलाकारी</span>
       </h1>
@@ -216,6 +297,22 @@
       </div>
     </div>
   </section>
+
+  <!-- ─── BILINGUAL TRUTH DIVIDER ─────────────────────────── -->
+  <div class="truth-divider reveal">
+    <div class="truth-divider__rule">
+      <span class="truth-divider__line"></span>
+      <span class="truth-divider__diamond">◆</span>
+      <span class="truth-divider__line"></span>
+    </div>
+    <p class="truth-divider__hi" aria-hidden="true">कला जो पेट भरे। कारी जो दिल।</p>
+    <p class="truth-divider__en">Art that fills the stomach. Craft that fills the heart.</p>
+    <div class="truth-divider__rule">
+      <span class="truth-divider__line"></span>
+      <span class="truth-divider__diamond">◆</span>
+      <span class="truth-divider__line"></span>
+    </div>
+  </div>
 
   <!-- ─── ABOUT / THE KALAKARS ──────────────────────────── -->
   <section class="section about-section" id="about">
@@ -588,6 +685,31 @@
   <!-- ─── FOOTER ───────────────────────────────────────── -->
   <footer class="footer footer--expanded">
     <div class="container">
+
+      <!-- KK Luxury Seal -->
+      <div class="kk-seal-wrap">
+        <div class="kk-seal" aria-hidden="true">
+          <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" class="kk-seal__svg">
+            <defs>
+              <path id="sealRing" d="M 60,8 A 52,52 0 0,1 112,60 A 52,52 0 0,1 60,112 A 52,52 0 0,1 8,60 A 52,52 0 0,1 60,8"/>
+            </defs>
+            <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(200,145,46,0.22)" stroke-width="0.75"/>
+            <circle cx="60" cy="60" r="46" fill="none" stroke="rgba(200,145,46,0.10)" stroke-width="0.5"/>
+            <text font-family="'Space Mono', monospace" font-size="6.5" fill="rgba(200,145,46,0.55)" letter-spacing="2.4">
+              <textPath href="#sealRing">KALAAKAARI · EST. MMXVIII · NEW DELHI · कलाकारी · </textPath>
+            </text>
+            <text x="60" y="53" text-anchor="middle" font-family="'Bebas Neue', sans-serif" font-size="20" fill="rgba(200,145,46,0.88)" letter-spacing="3">KK</text>
+            <text x="60" y="65" text-anchor="middle" font-size="7" fill="rgba(200,145,46,0.45)">◆</text>
+            <text x="60" y="76" text-anchor="middle" font-family="'Noto Sans Devanagari', serif" font-size="7.5" fill="rgba(200,145,46,0.42)" letter-spacing="1">कलाकारी</text>
+          </svg>
+        </div>
+        <div class="kk-seal__rule">
+          <span class="kk-rule__line"></span>
+          <span class="kk-rule__diamond">◆</span>
+          <span class="kk-rule__line"></span>
+        </div>
+      </div>
+
       <div class="footer__grid">
 
         <!-- Brand col -->

@@ -4,23 +4,71 @@ window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 20);
 }, { passive: true });
 
-/* ── Mobile burger ─────────────────────────────────────── */
-const burger = document.getElementById('burger');
-const navLinks = document.querySelector('.nav__links');
-burger.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-  const spans = burger.querySelectorAll('span');
-  const open = navLinks.classList.contains('open');
-  spans[0].style.transform = open ? 'rotate(45deg) translate(5px,5px)' : '';
-  spans[1].style.opacity   = open ? '0' : '1';
-  spans[2].style.transform = open ? 'rotate(-45deg) translate(5px,-5px)' : '';
-});
-navLinks.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    burger.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+/* ── Side Drawer (burger) ────────────────────────────────── */
+(function () {
+  const burger   = document.getElementById('burger');
+  const drawer   = document.getElementById('sideDrawer');
+  const closeBtn = document.getElementById('sideDrawerClose');
+  const backdrop = document.getElementById('sideDrawerBackdrop');
+  if (!burger || !drawer) return;
+
+  function openDrawer() {
+    drawer.classList.add('open');
+    drawer.setAttribute('aria-hidden', 'false');
+    backdrop.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    // Animate burger → X
+    const spans = burger.querySelectorAll('span');
+    spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+    spans[1].style.opacity   = '0';
+    spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    drawer.setAttribute('aria-hidden', 'true');
+    backdrop.classList.remove('open');
+    document.body.style.overflow = '';
+    const spans = burger.querySelectorAll('span');
+    spans[0].style.transform = '';
+    spans[1].style.opacity   = '1';
+    spans[2].style.transform = '';
+  }
+
+  burger.addEventListener('click', openDrawer);
+  if (closeBtn)  closeBtn.addEventListener('click', closeDrawer);
+  if (backdrop)  backdrop.addEventListener('click', closeDrawer);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+
+  // Close drawer when a link inside it is clicked
+  drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+})();
+
+/* ── Nav Dropdowns ───────────────────────────────────────── */
+(function () {
+  document.querySelectorAll('.nav__item--drop').forEach(item => {
+    const btn = item.querySelector('.nav__drop-btn');
+    if (!btn) return;
+
+    // Desktop: hover
+    item.addEventListener('mouseenter', () => item.classList.add('open'));
+    item.addEventListener('mouseleave', () => item.classList.remove('open'));
+
+    // Mobile / keyboard: click toggle
+    btn.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.nav__item--drop.open').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
   });
-});
+
+  // Close dropdowns on outside click
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.nav__item--drop')) {
+      document.querySelectorAll('.nav__item--drop.open').forEach(i => i.classList.remove('open'));
+    }
+  });
+})();
 
 /* ── Scroll reveal ─────────────────────────────────────── */
 const observer = new IntersectionObserver((entries) => {
@@ -166,6 +214,13 @@ if (_mlEl) new MagnetLines(_mlEl, {
 
   if (langToggle) {
     langToggle.addEventListener('click', () => {
+      applyLang(currentLang === 'en' ? 'hi' : 'en');
+    });
+  }
+
+  const drawerLangToggle = document.getElementById('drawerLangToggle');
+  if (drawerLangToggle) {
+    drawerLangToggle.addEventListener('click', () => {
       applyLang(currentLang === 'en' ? 'hi' : 'en');
     });
   }

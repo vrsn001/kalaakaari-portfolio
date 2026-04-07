@@ -1,5 +1,5 @@
 /* ── Brutalist Mockup Inject ────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700;900&family=Space+Grotesk:wght@400;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
 
 :root {
   --primary-container: #C8912E;   /* Amber Gold — primary contrast */
@@ -12,8 +12,8 @@
   --on-surface-variant: #C9B89A;
   --outline: #8A7968;
   --on-primary: #0C0907;
-  --font-headline: 'Epilogue', sans-serif;
-  --font-label: 'Space Grotesk', sans-serif;
+  --font-headline: 'Playfair Display', serif;
+  --font-label: 'DM Sans', sans-serif;
 }
 
 .material-symbols-outlined {
@@ -27,7 +27,7 @@
   padding: 8rem 2rem 3rem;
   display: flex; flex-direction: column; justify-content: center;
   overflow: hidden;
-  background: radial-gradient(ellipse at 25% 65%, rgba(65,57,49,0.28) 0%, transparent 55%), #0C0907;
+  background: #0C0907;
 }
 .new-hero__bg {
   position: absolute; bottom: 0; left: 0; width: 100%; height: 614px;
@@ -54,9 +54,8 @@
     text-transform: uppercase; letter-spacing: -0.04em;
 }
 .new-hero h1 span.white { color: #fff; display: block; }
-.new-hero h1 span.green { 
-  color: var(--primary-container); display: block; font-style: italic; 
-  -webkit-text-stroke: 1px rgba(199, 62, 58, 0.35); text-shadow: 0 0 40px rgba(199, 62, 58, 0.15);
+.new-hero h1 span.green {
+  color: var(--primary-container); display: block; font-style: italic;
 }
 
 .new-hero__layout { display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: end; }
@@ -82,7 +81,7 @@
 .btn-link:hover { border-color: var(--primary-container); }
 
 .new-hero__meta { grid-column: 8 / span 5; background: var(--surface-container-lowest); padding: 2rem; border-left: 4px solid var(--primary-container); }
-.meta-row { display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 0; }
+.meta-row { display: grid; grid-template-columns: 80px 1fr; gap: 1rem; align-items: baseline; padding: 0.75rem 0; }
 .meta-label { font-family: var(--font-label); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--outline); }
 .meta-val { font-family: var(--font-label); font-size: 0.75rem; color: var(--primary-container); font-weight: bold; }
 
@@ -102,7 +101,7 @@
 .bento-card:hover img { transform: scale(1.1); }
 .bento-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s; opacity: 0.7; }
 .bento-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); opacity: 0.8; pointer-events: none; }
-.bento-card__content { position: absolute; bottom: 2rem; left: 2rem; z-index: 10; }
+.bento-card__content { position: absolute; bottom: 2rem; left: 2rem; right: 2rem; z-index: 10; }
 .bento-card__tag { font-family: var(--font-label); font-size: 0.75rem; color: var(--primary-container); text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 0.5rem; font-weight: bold; }
 .bento-card__title { font-family: var(--font-headline); font-weight: 900; font-size: 2rem; text-transform: uppercase; color: #fff; line-height: 1.1; }
 
@@ -233,15 +232,12 @@
 [data-lang="en"] .lt-en { color: var(--primary-container); opacity: 1; }
 [data-lang="hi"] .lt-hi { color: var(--primary-container); opacity: 1; }
 
-/* ── Hero: Delhi skyline baked into H1 text ── */
+/* ── Hero: KALAAKAARI text colour ── */
 .hero-brand-text {
-  background:
-    linear-gradient(180deg, rgba(200,145,46,0.80) 0%, rgba(65,57,49,0.40) 100%),
-    url('https://lh3.googleusercontent.com/aida-public/AB6AXuBFLr29pc3pCPAe7TxYA8-RxuzDBLEO8Z8FmMFiO-nbpuGVKotKLbCZ3ry8gQL74ls8ng60uKw9fZf0a7uGYqqg00Zy8zXZln9DjtBT8yiE1MxXPM6dyzwV0YAEpL2OiwrZY4CWf2BdXOvnbUtNX2xyZQufN_mq4HEL0z7SPaglPQX8m38ogZC_jQZxbXjaqOU8iVWpol54z284EPk7AQ8tGSjppCPpCuuIgTc7rXFxVp_Fo9DjhI9SxFIyWNwNXLBE_ChQMznE9I6T')
-    bottom center / cover no-repeat;
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
-  color: transparent !important;
+  color: var(--primary-container) !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
   -webkit-text-stroke: 0 !important;
   text-shadow: none !important;
 }
@@ -265,14 +261,14 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 1;
+  z-index: 0;
   overflow: hidden;
 }
 .hh-word {
   position: absolute;
   font-family: 'Noto Sans Devanagari', 'Yatra One', serif;
   font-weight: 900;
-  color: rgba(200, 145, 46, 0.055);
+  color: rgba(200, 145, 46, 0.035);
   line-height: 1;
   user-select: none;
 }
@@ -546,12 +542,12 @@
   border-color: var(--outline-variant) !important;
 }
 
-/* Hero brand text — amber gradient for light bg */
+/* Hero brand text — deep amber for light bg */
 [data-theme="light"] .hero-brand-text {
-  background:
-    linear-gradient(180deg, rgba(139,94,26,0.85) 0%, rgba(65,57,49,0.45) 100%),
-    url('https://lh3.googleusercontent.com/aida-public/AB6AXuBFLr29pc3pCPAe7TxYA8-RxuzDBLEO8Z8FmMFiO-nbpuGVKotKLbCZ3ry8gQL74ls8ng60uKw9fZf0a7uGYqqg00Zy8zXZln9DjtBT8yiE1MxXPM6dyzwV0YAEpL2OiwrZY4CWf2BdXOvnbUtNX2xyZQufN_mq4HEL0z7SPaglPQX8m38ogZC_jQZxbXjaqOU8iVWpol54z284EPk7AQ8tGSjppCPpCuuIgTc7rXFxVp_Fo9DjhI9SxFIyWNwNXLBE_ChQMznE9I6T')
-    bottom center / cover no-repeat !important;
+  color: #8B5E1A !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
 }
 
 /* Ghost Hindi text slightly more visible on light bg */
@@ -986,8 +982,8 @@
   color: #fff;
   margin: 1.2rem 0 2rem;
 }
-.about__headline em { font-style: italic; color: #fff; }
-.about__headline--amber { color: var(--primary-container); }
+.about__headline em { font-style: normal; color: #fff; }
+.about__headline--amber { color: var(--primary-container); font-style: normal; }
 .about__body {
   font-size: 1rem;
   line-height: 1.85;
@@ -1072,21 +1068,22 @@
   display: flex;
   align-items: center;
   margin-bottom: 1.5rem;
+  margin-left: -0.2rem;
 }
 .process__num {
   font-family: var(--font-headline);
   font-weight: 900;
   font-size: clamp(2.8rem, 5vw, 4.5rem);
-  color: transparent;
-  -webkit-text-stroke: 1.5px var(--primary-container);
+  color: var(--primary-container);
   line-height: 1;
   flex-shrink: 0;
+  opacity: 0.85;
 }
 .process__connector {
   flex: 1;
   height: 1px;
-  background: linear-gradient(to right, rgba(200,145,46,0.5), transparent);
-  margin-left: 1rem;
+  background: rgba(200, 145, 46, 0.25);
+  margin-left: 1.5rem;
 }
 .process__connector--last { background: transparent; }
 @media (max-width: 767px) { .process__connector { display: none; } }
@@ -1132,6 +1129,9 @@
   cursor: pointer;
   transition: transform 0.3s cubic-bezier(.16,1,.3,1), border-color 0.3s;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .work-card:hover { transform: translateY(-6px); border-color: var(--primary-container); }
 
@@ -1340,7 +1340,7 @@
 }
 
 .fm-item__sub {
-  font-family: 'Inter', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 0.75rem;
   font-weight: 400;
   letter-spacing: 0.02em;
@@ -1416,3 +1416,1034 @@
 [data-theme="light"] .fm-part {
   color: #F5F2EB;
 }
+
+/* ── Nav Restructure ────────────────────────────────────── */
+.nav__inner {
+  display: grid !important;
+  grid-template-columns: auto 1fr auto !important;
+  align-items: center !important;
+  gap: 1rem !important;
+}
+
+/* Left: art logo */
+.nav__art { display: flex; align-items: center; }
+
+.nav__logo-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.45rem;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.15em;
+}
+
+/* Bilingual logo logic */
+.logo-hi  { color: #C8912E; display: none; }
+.logo-x   { color: rgba(200,145,46,0.4); font-size: 0.9em; display: none; }
+.logo-en-half { color: #F5F2EB; display: none; }
+.logo-full { color: #F5F2EB; display: inline; }
+
+/* EN mode: full English */
+[data-lang="en"] .logo-full      { display: inline; }
+[data-lang="en"] .logo-hi,
+[data-lang="en"] .logo-x,
+[data-lang="en"] .logo-en-half   { display: none; }
+
+/* HI mode: half Hindi + half English */
+[data-lang="hi"] .logo-full      { display: none; }
+[data-lang="hi"] .logo-hi,
+[data-lang="hi"] .logo-x,
+[data-lang="hi"] .logo-en-half   { display: inline; }
+[data-lang="hi"] .logo-hi        { font-family: 'Noto Sans Devanagari', sans-serif; font-size: 1.25rem; }
+
+/* Center: lang toggle */
+.nav__center {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+/* Right: links + burger */
+.nav__right {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  justify-content: flex-end !important;
+}
+
+/* Nav links list (desktop) */
+.nav__links {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0 !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.nav__item { position: relative; }
+
+.nav__item a,
+.nav__drop-btn {
+  display: block;
+  padding: 0.45rem 1rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(245,242,235,0.65);
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.nav__item a:hover,
+.nav__drop-btn:hover { color: #C8912E; }
+
+/* Dropdown */
+.nav__item--drop { position: relative; }
+
+.nav__dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 200px;
+  background: #0e0c09;
+  border: 1px solid rgba(200,145,46,0.18);
+  border-top: 2px solid #C8912E;
+  padding: 0.4rem 0;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 200;
+}
+
+.nav__item--drop:hover .nav__dropdown,
+.nav__item--drop.open .nav__dropdown {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+.nav__dropdown a {
+  display: block !important;
+  padding: 0.55rem 1.2rem !important;
+  font-size: 0.68rem !important;
+  letter-spacing: 0.1em !important;
+  color: rgba(200,180,150,0.7) !important;
+  transition: color 0.15s, padding-left 0.15s !important;
+}
+.nav__dropdown a:hover {
+  color: #C8912E !important;
+  padding-left: 1.5rem !important;
+}
+
+/* Drop button arrow indicator */
+.nav__drop-btn::after {
+  content: ' ↓';
+  font-size: 0.6rem;
+  opacity: 0.5;
+  transition: transform 0.2s;
+  display: inline-block;
+}
+.nav__item--drop:hover .nav__drop-btn::after,
+.nav__item--drop.open .nav__drop-btn::after {
+  transform: rotate(180deg);
+}
+
+/* Mobile: hide nav links, show only burger */
+@media (max-width: 768px) {
+  .nav__links { display: none !important; }
+  .nav__logo-btn { font-size: 1.15rem; }
+}
+
+/* Light theme nav */
+[data-theme="light"] .nav__logo-btn .logo-full,
+[data-theme="light"] .nav__logo-btn .logo-en-half { color: #1a1410; }
+[data-theme="light"] .nav__item a,
+[data-theme="light"] .nav__drop-btn { color: rgba(26,20,16,0.65); }
+[data-theme="light"] .nav__item a:hover,
+[data-theme="light"] .nav__drop-btn:hover { color: #8B5E1A; }
+[data-theme="light"] .nav__dropdown { background: #f5ede0; border-color: rgba(65,57,49,0.15); }
+[data-theme="light"] .nav__dropdown a { color: rgba(65,57,49,0.7) !important; }
+[data-theme="light"] .nav__dropdown a:hover { color: #8B5E1A !important; }
+
+/* ── Side Drawer ─────────────────────────────────────────── */
+.side-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: min(380px, 90vw);
+  background: #0b0906;
+  border-left: 1px solid rgba(200,145,46,0.15);
+  z-index: 1001;
+  transform: translateX(100%);
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+  display: flex;
+  flex-direction: column;
+  padding: 5.5rem 2.5rem 2.5rem;
+  overflow-y: auto;
+}
+.side-drawer.open {
+  transform: translateX(0);
+}
+
+.side-drawer__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s;
+}
+.side-drawer__backdrop.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.side-drawer__close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: 1px solid rgba(200,145,46,0.25);
+  color: rgba(245,242,235,0.6);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: color 0.2s, border-color 0.2s;
+}
+.side-drawer__close:hover { color: #C8912E; border-color: #C8912E; }
+
+.side-drawer__content { flex: 1; display: flex; flex-direction: column; gap: 2rem; }
+
+.side-drawer__eyebrow {
+  display: block;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  color: #C8912E;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.side-drawer__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.side-drawer__nav a {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(245,242,235,0.5);
+  text-decoration: none;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid rgba(200,145,46,0.07);
+  transition: color 0.2s, padding-left 0.2s;
+}
+.side-drawer__nav a:hover { color: #C8912E; padding-left: 0.5rem; }
+
+.side-drawer__divider {
+  height: 1px;
+  background: rgba(200,145,46,0.12);
+}
+
+.side-drawer__meta {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.side-drawer__meta .theme-toggle {
+  background: none;
+  border: 1px solid rgba(200,145,46,0.2);
+  color: rgba(245,242,235,0.5);
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: left;
+  transition: color 0.2s, border-color 0.2s;
+  width: 100%;
+}
+.side-drawer__meta .theme-toggle:hover { color: #C8912E; border-color: #C8912E; }
+
+/* Show correct icon in drawer */
+.side-drawer__meta .theme-toggle .tt-dark,
+.side-drawer__meta .theme-toggle .tt-light { display: block !important; }
+[data-theme="dark"]  .side-drawer__meta .theme-toggle .tt-light { display: none !important; }
+[data-theme="light"] .side-drawer__meta .theme-toggle .tt-dark  { display: none !important; }
+
+.side-drawer__delhi-link {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(245,242,235,0.35);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.side-drawer__delhi-link:hover { color: #C8912E; }
+
+/* Ghost Devanagari in drawer */
+.side-drawer__deva {
+  position: absolute;
+  bottom: -1rem;
+  right: -0.5rem;
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 9rem;
+  font-weight: 900;
+  color: rgba(200,145,46,0.04);
+  pointer-events: none;
+  line-height: 1;
+  user-select: none;
+}
+
+/* Light theme drawer */
+[data-theme="light"] .side-drawer { background: #f5ede0; border-color: rgba(65,57,49,0.15); }
+[data-theme="light"] .side-drawer__nav a { color: rgba(65,57,49,0.5); }
+[data-theme="light"] .side-drawer__nav a:hover { color: #8B5E1A; }
+[data-theme="light"] .side-drawer__close { color: rgba(65,57,49,0.5); border-color: rgba(65,57,49,0.2); }
+[data-theme="light"] .side-drawer__close:hover { color: #8B5E1A; border-color: #8B5E1A; }
+[data-theme="light"] .side-drawer__meta .theme-toggle { color: rgba(65,57,49,0.5); }
+[data-theme="light"] .side-drawer__delhi-link { color: rgba(65,57,49,0.35); }
+
+/* ── Floating Buttons ────────────────────────────────────── */
+.float-btn {
+  position: fixed;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  z-index: 90;
+  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s;
+  cursor: pointer;
+}
+.float-btn:hover { transform: scale(1.1); }
+
+.float-btn--talk {
+  top: 130px;
+  right: 1.25rem;
+  background: #C8912E;
+  color: #1a1208;
+  box-shadow: 0 4px 24px rgba(200,145,46,0.4);
+}
+.float-btn--talk:hover { box-shadow: 0 8px 36px rgba(200,145,46,0.55); }
+
+.float-btn--delhi {
+  bottom: 1.5rem;
+  right: 1.25rem;
+  background: #413931;
+  color: #F5F2EB;
+  border: 1px solid rgba(200,145,46,0.25);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.45);
+}
+.float-btn--delhi:hover { box-shadow: 0 8px 36px rgba(0,0,0,0.55); }
+
+/* Hide floats on very small viewports so they don't overlap */
+@media (max-width: 380px) { .float-btn { display: none; } }
+
+/* Light theme floats */
+[data-theme="light"] .float-btn--delhi { background: #413931; color: #F5F2EB; }
+[data-theme="light"] .float-btn--talk { background: #8B5E1A; }
+
+
+/* ══════════════════════════════════════════════════════════
+   OVERALL DESIGN POLISH — unified vibe
+   ══════════════════════════════════════════════════════════ */
+
+/* ── 1. Manifesto: restore "KALA IS" / "KAARI IS" visibility ── */
+.manifesto__line {
+  color: rgba(240, 228, 204, 0.42) !important;
+}
+.manifesto__line--amber {
+  color: var(--primary-container) !important;
+}
+[data-theme="light"] .manifesto__line {
+  color: rgba(26, 20, 16, 0.28) !important;
+}
+
+/* ── 2. Mobile touch: restore cursor + hide custom cursor ── */
+@media (pointer: coarse) {
+  * { cursor: auto !important; }
+  .custom-cursor { display: none !important; }
+}
+
+/* ── 3. Hero h1: clean block stack, no flex fighting ── */
+.new-hero h1 {
+  display: block !important;
+  line-height: 1 !important;
+  margin-bottom: 1.8rem !important;
+  font-size: clamp(4.5rem, 11vw, 9rem) !important;
+  letter-spacing: -0.04em !important;
+}
+
+/* "This Is" — Cormorant italic intro, clearly smaller */
+.hero-this-is {
+  display: block !important;
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(1.3rem, 2.8vw, 2.4rem) !important;
+  font-weight: 400 !important;
+  font-style: italic !important;
+  letter-spacing: 0.1em !important;
+  text-transform: none !important;
+  color: rgba(240, 228, 204, 0.45) !important;
+  line-height: 1.4 !important;
+  margin-bottom: 0.05em !important;
+}
+[data-theme="light"] .hero-this-is {
+  color: rgba(26, 20, 16, 0.38) !important;
+}
+
+/* KALAAKAARI — full weight, tight line-height */
+.new-hero h1 span.green {
+  display: block !important;
+  line-height: 0.88 !important;
+  font-style: normal !important;
+}
+
+/* Devanagari ghost — sits snug below KALAAKAARI */
+.hero-deva-sub {
+  display: block !important;
+  line-height: 1 !important;
+  margin-top: 0.1em !important;
+}
+
+/* ── 6. Hero meta card: top rule on mobile for separation ── */
+@media (max-width: 767px) {
+  .new-hero__meta {
+    border-top: 1px solid rgba(200, 145, 46, 0.25) !important;
+    border-left: 4px solid var(--primary-container) !important;
+    padding-top: 1.5rem !important;
+  }
+}
+
+/* ── 7. Float "Let's Talk": push below nav conflict zone ── */
+.float-btn--talk {
+  top: 130px !important;
+}
+
+/* ── 8. Manifesto: soften the raw brutalist borders ── */
+.manifesto {
+  border-top: 1px solid rgba(65, 57, 49, 0.5) !important;
+  border-bottom: 1px solid rgba(65, 57, 49, 0.5) !important;
+}
+[data-theme="light"] .manifesto {
+  border-color: rgba(65, 57, 49, 0.25) !important;
+}
+
+/* ── 9. About section: cream accent on headline for depth ── */
+.about__headline {
+  line-height: 0.9 !important;
+}
+
+/* ── 10. Section label: unified spacing above title ── */
+.section__label {
+  margin-bottom: 0.6rem !important;
+}
+
+/* ── 11. MagnetLines decoration: slightly more presence ── */
+.hero__magnet {
+  opacity: 0.55 !important;
+}
+
+/* ── 12. FlowingMenu: slightly taller rows for more luxury feel ── */
+.fm-item {
+  height: 96px !important;
+}
+
+/* ── 13. Eyebrow line decoration: slightly shorter for elegance ── */
+.eyebrow-line {
+  width: 36px !important;
+}
+
+/* ── 14. Stat label: more tracking ── */
+.stat-label {
+  letter-spacing: 0.22em !important;
+}
+
+/* ── 15. Nav logo button: add amber underline glow on hover ── */
+.nav__logo-btn:hover .logo-full,
+.nav__logo-btn:hover .logo-en-half {
+  color: var(--primary-container);
+  transition: color 0.2s;
+}
+
+/* ── 16. Clients strip: slightly slower scroll for readability ── */
+.clients-track {
+  animation-duration: 28s !important;
+}
+
+/* ── 17. Work card thumb: slightly taller ── */
+.work-card__thumb {
+  height: 250px !important;
+}
+
+/* ── 18. Process num: add amber fill bleed on hover ── */
+.process__step:hover .process__num {
+  -webkit-text-stroke-color: var(--primary-container);
+  color: rgba(200, 145, 46, 0.12);
+}
+
+/* ── 19. Marquee track: keep readable with slowed animation ── */
+.new-marquee__track {
+  animation-duration: 28s !important;
+}
+
+/* ── 20. Hero actions: more vertical space above ── */
+.new-hero__actions {
+  margin-top: 2.5rem !important;
+}
+
+/* ── 21. Nav: hide lang toggle on narrow mobile, keep in drawer ── */
+@media (max-width: 480px) {
+  .nav__center { display: none !important; }
+}
+
+/* ── Drawer lang button (mirrors nav lang toggle) ── */
+.side-drawer__lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: none;
+  border: 1px solid rgba(200,145,46,0.2);
+  color: rgba(245,242,235,0.5);
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.2s, border-color 0.2s;
+  width: 100%;
+}
+.side-drawer__lang-btn:hover { color: #C8912E; border-color: #C8912E; }
+[data-theme="light"] .side-drawer__lang-btn { color: rgba(65,57,49,0.5); }
+.side-drawer__lang-btn .lt-hi { font-family: 'Noto Sans Devanagari', serif; }
+[data-lang="en"] .side-drawer__lang-btn .lt-en { color: var(--primary-container); opacity: 1; }
+[data-lang="hi"] .side-drawer__lang-btn .lt-hi { color: var(--primary-container); opacity: 1; }
+
+/* ── 22. Float buttons: smaller on mobile, not obtrusive ── */
+@media (max-width: 640px) {
+  .float-btn {
+    width: 60px !important;
+    height: 60px !important;
+    font-size: 0.48rem !important;
+  }
+  .float-btn--talk { top: 100px !important; }
+  .float-btn--delhi { bottom: 1.25rem !important; right: 1.25rem !important; }
+}
+
+/* ── 23. Bento card hover: slightly more scale for cinematic feel ── */
+.bento-card:hover img {
+  transform: scale(1.06) !important;
+}
+
+/* ── 24. Brand panel inner: more breathing room ── */
+.brand-panel__inner {
+  padding: 4.5rem 2.5rem 3rem !important;
+}
+
+/* ── 25. Hero deva sub text: bring slightly forward ── */
+.hero-deva-sub {
+  color: rgba(200, 145, 46, 0.12) !important;
+  margin-top: -0.4rem !important;
+}
+[data-theme="light"] .hero-deva-sub {
+  color: rgba(139, 94, 26, 0.10) !important;
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   ✦  LUXURY AESTHETIC LAYER
+   ══════════════════════════════════════════════════════════ */
+
+/* ── 1. KALAAKAARI hero text — solid amber ── */
+.hero-brand-text {
+  color: var(--primary-container) !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: none !important;
+  animation: none !important;
+}
+
+[data-theme="light"] .hero-brand-text {
+  color: #8B5E1A !important;
+  background: none !important;
+}
+
+/* ── 2. FILM GRAIN — removed for cleaner luxury aesthetic ── */
+
+/* ── 3. KK SEAL ── */
+.kk-seal-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3.5rem 0 2rem;
+  gap: 1.8rem;
+}
+
+.kk-seal {
+  width: 110px;
+  height: 110px;
+  position: relative;
+  opacity: 0.88;
+  transition: opacity 0.4s, transform 0.4s var(--ease-out);
+}
+
+.kk-seal:hover {
+  opacity: 1;
+  transform: rotate(15deg) scale(1.05);
+}
+
+.kk-seal__svg {
+  width: 100%;
+  height: 100%;
+  animation: sealSpin 40s linear infinite;
+  /* Only the ring text spins, center is static */
+}
+
+@keyframes sealSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── Diamond rule (reusable separator) ── */
+.kk-seal__rule {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: min(480px, 80vw);
+}
+
+.kk-rule__line {
+  flex: 1;
+  height: 1px;
+  background: rgba(200, 145, 46, 0.25);
+}
+
+.kk-rule__line:last-child {
+  background: rgba(200, 145, 46, 0.25);
+}
+
+.kk-rule__diamond {
+  color: rgba(200,145,46,0.5);
+  font-size: 0.45rem;
+  flex-shrink: 0;
+  letter-spacing: 0;
+}
+
+/* ── 4. DIAMOND RULE — reusable class ── */
+.lux-rule {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 2rem;
+}
+.lux-rule::before,
+.lux-rule::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(200,145,46,0.25));
+}
+.lux-rule::after {
+  background: linear-gradient(to left, transparent, rgba(200,145,46,0.25));
+}
+.lux-rule__mark {
+  color: rgba(200,145,46,0.45);
+  font-size: 0.45rem;
+  flex-shrink: 0;
+}
+
+/* Manifesto: replace hard border with diamond rule style */
+.manifesto {
+  border-top: none !important;
+  border-bottom: none !important;
+  position: relative;
+}
+.manifesto::before,
+.manifesto::after {
+  content: '◆';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(200, 145, 46, 0.4);
+  font-size: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.manifesto::before {
+  top: 0;
+  padding-top: 0;
+  background:
+    linear-gradient(to right, transparent, rgba(200,145,46,0.2) 40%, rgba(200,145,46,0.2) 60%, transparent) no-repeat center / 60vw 1px,
+    none;
+  width: 100%;
+  height: 1px;
+  font-size: 0;
+}
+.manifesto::after {
+  bottom: 0;
+  background:
+    linear-gradient(to right, transparent, rgba(200,145,46,0.2) 40%, rgba(200,145,46,0.2) 60%, transparent) no-repeat center / 60vw 1px;
+  width: 100%;
+  height: 1px;
+  font-size: 0;
+}
+
+/* ── 5. WORK CARD CORNER BRACKETS ── */
+.work-card::before {
+  content: '';
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  width: 18px;
+  height: 18px;
+  border-top: 1.5px solid var(--primary-container);
+  border-right: 1.5px solid var(--primary-container);
+  opacity: 0;
+  transform: translate(4px, -4px);
+  transition: opacity 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+  z-index: 5;
+}
+.work-card:hover::before {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* Bottom-left bracket via work-card__info::before */
+.work-card__info { position: relative; }
+.work-card__info::before {
+  content: '';
+  position: absolute;
+  bottom: 1.4rem;
+  left: 1.4rem;
+  width: 14px;
+  height: 14px;
+  border-bottom: 1px solid rgba(200,145,46,0.35);
+  border-left: 1px solid rgba(200,145,46,0.35);
+  opacity: 0;
+  transform: translate(-3px, 3px);
+  transition: opacity 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+}
+.work-card:hover .work-card__info::before {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* ── 6. MANIFESTO LARGE PULL-QUOTE OPENER ── */
+.manifesto__card {
+  position: relative;
+  overflow: hidden;
+}
+.manifesto__card::before {
+  content: '\201C';
+  position: absolute;
+  top: -0.5rem;
+  left: 1rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 9rem;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(200, 145, 46, 0.1);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ── 7. SECTION TITLE ANIMATED UNDERLINE ── */
+.section__title {
+  position: relative;
+  display: block !important;
+}
+.section__title::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(to right, var(--primary-container), transparent);
+  transition: width 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.section__header.visible .section__title::after { width: 55%; }
+
+/* ── 8. HERO AMBIENT GLOW — deeper atmosphere ── */
+.new-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  left: -10%;
+  width: 55%;
+  height: 55%;
+  background: radial-gradient(ellipse, rgba(200,145,46,0.06) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+  animation: ambientPulse 6s ease-in-out infinite alternate;
+}
+
+@keyframes ambientPulse {
+  from { opacity: 0.5; transform: scale(1); }
+  to   { opacity: 1;   transform: scale(1.08); }
+}
+
+/* ── 9. TESTIMONIAL PULL-QUOTE STYLE ── */
+.daily__sticker p {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-style: italic !important;
+  font-size: 1.05rem !important;
+  line-height: 1.75 !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.01em !important;
+}
+.daily__sticker span {
+  font-family: 'Space Mono', monospace !important;
+  font-size: 0.6rem !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+}
+
+/* ── 10. NAV LINK AMBER UNDERLINE SWIPE ── */
+.nav__item a,
+.nav__drop-btn {
+  position: relative;
+}
+.nav__item > a::after,
+.nav__item--drop .nav__drop-btn::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 1rem !important;
+  right: 1rem !important;
+  height: 1px !important;
+  background: var(--primary-container) !important;
+  transform: scaleX(0) !important;
+  transition: transform 0.25s var(--ease-out) !important;
+  transform-origin: left !important;
+}
+.nav__item > a:hover::after { transform: scaleX(1) !important; }
+
+/* Drop btn already uses ::after for the ↓ arrow — skip swipe for drop btns */
+.nav__drop-btn::after {
+  content: ' ↓' !important;
+  position: static !important;
+  height: auto !important;
+  background: none !important;
+  transform: none !important;
+  transition: transform 0.2s !important;
+  display: inline !important;
+}
+.nav__item--drop:hover .nav__drop-btn::after,
+.nav__item--drop.open .nav__drop-btn::after {
+  transform: rotate(180deg) !important;
+  background: none !important;
+}
+
+/* ── 11. FOOTER LOGO: Alata + italic treatment ── */
+.footer__logo {
+  font-family: 'Alata', sans-serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 1.9rem !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: var(--primary-container) !important;
+}
+
+/* ── 12. EYEBROW + LABELS: Alata with luxury spacing ── */
+.eyebrow-text,
+.section__label > span:first-child,
+.manifesto__eyebrow,
+.meta-label,
+.stat-label,
+.work-card__tag,
+.bento-card__tag,
+.footer__col-title,
+.side-drawer__eyebrow {
+  font-family: 'Alata', sans-serif !important;
+  letter-spacing: 0.32em !important;
+}
+
+/* Body text, descriptions, process — Alata */
+.about__body,
+.process__desc,
+.work-card__sub,
+.manifesto__body,
+.new-hero__desc p,
+.faq__a p,
+.footer__tagline,
+.footer__links li a,
+.footer__links li span,
+.footer__socials a {
+  font-family: 'Alata', sans-serif !important;
+}
+
+/* Nav links — Alata */
+.nav__item a,
+.nav__drop-btn,
+.nav__dropdown a {
+  font-family: 'Alata', sans-serif !important;
+  letter-spacing: 0.1em !important;
+}
+
+/* Side drawer nav — Alata */
+.side-drawer__nav a {
+  font-family: 'Alata', sans-serif !important;
+  font-size: 1.4rem !important;
+  letter-spacing: 0.08em !important;
+}
+
+/* Stats label — already inherits but force Alata */
+.stat-label { font-family: 'Alata', sans-serif !important; }
+
+/* Testimonials quote text — keep Cormorant for elegance */
+/* (already set above to Cormorant) */
+
+/* Typewriter — Cormorant italic */
+.hero-typewriter { font-family: 'Cormorant Garamond', serif !important; }
+
+/* ── 13. ABOUT HEADLINE: Cormorant italic for THE ── */
+.about__headline {
+  font-family: 'Epilogue', sans-serif !important;
+}
+
+/* Thin amber rule below "THE KALAKARS." */
+.about__left::after {
+  content: '';
+  display: block;
+  width: 3rem;
+  height: 1px;
+  background: var(--primary-container);
+  margin-top: 2.5rem;
+  opacity: 0.6;
+}
+
+/* ── 14. BENTO CARD: luxury inner glow on hover ── */
+.bento-card:hover {
+  box-shadow: inset 0 0 60px rgba(200,145,46,0.04), 0 24px 60px rgba(0,0,0,0.5) !important;
+}
+
+/* ── 15. LIGHT THEME GRAIN ── */
+[data-theme="light"] .kk-seal__svg text { fill-opacity: 0.7; }
+
+/* Ensure grain is below cursor */
+body::before { z-index: 99997 !important; }
+.custom-cursor { z-index: 99999 !important; }
+
+/* ── BILINGUAL TRUTH DIVIDER ─────────────────────────────── */
+.truth-divider {
+  background: var(--surface-container-lowest);
+  padding: 4rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.truth-divider__rule {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: min(520px, 80vw);
+}
+
+.truth-divider__line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(200,145,46,0.28));
+}
+.truth-divider__rule span.truth-divider__line:last-child {
+  background: linear-gradient(to left, transparent, rgba(200,145,46,0.28));
+}
+
+.truth-divider__diamond {
+  color: rgba(200,145,46,0.45);
+  font-size: 0.42rem;
+  flex-shrink: 0;
+}
+
+.truth-divider__hi {
+  font-family: 'Noto Sans Devanagari', serif;
+  font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+  font-weight: 700;
+  color: var(--primary-container);
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+}
+
+.truth-divider__en {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(0.9rem, 2vw, 1.15rem);
+  font-weight: 400;
+  color: var(--on-surface-variant);
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+}
+
+[data-theme="light"] .truth-divider {
+  background: var(--bg-2);
+}
+
+
+/* ══ GLOBAL LOWERCASE AESTHETIC ══════════════════════════════ */
+*, *::before, *::after {
+  text-transform: lowercase !important;
+}
+
+/* Exceptions: coords, monospace fine-print, hindi stays as-is */
+.footer__coords,
+.brand-panel__coords,
+.bp-roman,
+.meta-val,
+.hero-deva-sub,
+.hh-word,
+.manifesto__deva-ghost,
+.about__ghost-deva,
+.side-drawer__deva,
+.bp-deva-big,
+.bpart-deva,
+.truth-divider__hi,
+.clients-track .cl-deva,
+.kk-seal__svg text { text-transform: none !important; }

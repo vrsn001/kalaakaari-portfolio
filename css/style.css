@@ -15,10 +15,10 @@
   --hero-text: #F0E4CC;
   --hero-dim:  rgba(240,228,204,.7);
 
-  --font:         'Inter', sans-serif;
-  --font-serif:   'Space Grotesk', sans-serif;
-  --font-display: 'Epilogue', sans-serif;
-  --font-mono:    'Space Grotesk', monospace;
+  --font:         'DM Sans', sans-serif;
+  --font-serif:   'Cormorant Garamond', serif;
+  --font-display: 'Playfair Display', serif;
+  --font-mono:    'Space Mono', monospace;
   --font-hindi:   'Noto Sans Devanagari', serif;
 
   --ease:     cubic-bezier(.25,.46,.45,.94);
@@ -313,7 +313,7 @@ ul { list-style: none; }
 .hero__scroll-line {
   width: 1px;
   height: 48px;
-  background: linear-gradient(to bottom, var(--accent), transparent);
+  background: var(--accent);
   animation: scrollPulse 2s ease-in-out infinite;
 }
 @keyframes scrollPulse {
@@ -784,7 +784,7 @@ ul { list-style: none; }
 .daily__map-mask {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, var(--bg) 0%, rgba(245,242,235,0.7) 50%, var(--bg) 100%);
+  background: rgba(12, 9, 7, 0.62);
   pointer-events: none;
 }
 .daily .container { position: relative; z-index: 1; }
@@ -928,7 +928,7 @@ ul { list-style: none; }
 .marker-dot--gold { fill: #d4aa4c; }
 
 .marker-label {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: .06em;
@@ -937,7 +937,7 @@ ul { list-style: none; }
   pointer-events: none;
 }
 .marker-sublabel {
-  font-family: 'Space Grotesk', monospace;
+  font-family: 'Space Mono', monospace;
   font-size: 8.5px;
   letter-spacing: .09em;
   fill: rgba(212,170,76,0);
