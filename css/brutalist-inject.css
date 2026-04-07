@@ -116,6 +116,29 @@
 .bento-4 span.material-symbols-outlined { font-size: 3rem; color: var(--on-primary); margin-bottom: auto;}
 .bento-4 p { font-family: var(--font-headline); font-weight: 900; font-size: 1.5rem; text-transform: uppercase; color: var(--on-primary); line-height: 1.2; margin-top: auto; }
 
+.kk-dashed-triangle {
+  width: 3.5rem;
+  height: 3.5rem;
+  fill: none;
+  stroke: var(--on-primary);
+  stroke-width: 6;
+  stroke-dasharray: 14 10;
+  stroke-linecap: square;
+  animation: spinTriangle 16s linear infinite, marchDash 1.2s linear infinite;
+  margin-bottom: auto;
+  align-self: flex-start;
+  overflow: visible;
+}
+
+@keyframes spinTriangle {
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes marchDash {
+  0%   { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -24; }
+}
+
 /* ── Global Brutalist Overrides for old components ── */
 .nav.scrolled {
   background: rgba(19, 19, 19, 0.8) !important;
