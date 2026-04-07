@@ -2450,25 +2450,30 @@ body::before { z-index: 99997 !important; }
 }
 
 
-/* ══ LUXURY GEOMETRIC CASING ══════════════════════════════ */
-.process__title,
-.about__pillar-title,
-.section__title,
-.bento-card__title,
-.about__headline,
-.bento-card__tag {
+/* ══ GLOBAL LOWERCASE AESTHETIC ══════════════════════════════ */
+*, *::before, *::after {
+  text-transform: lowercase !important;
+}
+
+/* Exceptions: coords, monospace fine-print, hindi stays as-is */
+/* Selected data forced explicitly to uppercase per previous feature request */
+.meta-val,
+.footer__coords,
+.brand-panel__coords,
+.bp-roman {
   text-transform: uppercase !important;
 }
 
-.process__desc,
-.about__pillar-desc,
-.meta-val,
-.meta-label,
-.fm-item__sub,
-.footer__col-title {
-  text-transform: uppercase !important;
-  letter-spacing: 0.05em;
-}
+.hero-deva-sub,
+.hh-word,
+.manifesto__deva-ghost,
+.about__ghost-deva,
+.side-drawer__deva,
+.bp-deva-big,
+.bpart-deva,
+.truth-divider__hi,
+.clients-track .cl-deva,
+.kk-seal__svg text { text-transform: none !important; }
 
 /* Ensure smooth geometric text rendering globally */
 body {
