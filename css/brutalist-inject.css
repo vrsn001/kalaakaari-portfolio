@@ -12,8 +12,8 @@
   --on-surface-variant: #C9B89A;
   --outline: #8A7968;
   --on-primary: #0C0907;
-  --font-headline: 'Playfair Display', serif;
-  --font-label: 'DM Sans', sans-serif;
+  --font-headline: 'Bebas Neue', sans-serif;
+  --font-label: 'Plus Jakarta Sans', sans-serif;
 }
 
 .material-symbols-outlined {
@@ -46,12 +46,12 @@
 
 .eyebrow { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
 .eyebrow-line { height: 2px; width: 48px; background: var(--primary-container); }
-.eyebrow-text { font-family: var(--font-label); color: var(--primary-container); text-transform: uppercase; letter-spacing: 0.3em; font-size: 0.75rem; font-weight: 700; }
+.eyebrow-text { font-family: 'Cinzel', serif; color: var(--primary-container); text-transform: uppercase; letter-spacing: 0.25em; font-size: 0.72rem; font-weight: 600; }
 
-.new-hero h1 { 
-    font-family: var(--font-headline); font-weight: 900; 
-    font-size: clamp(4rem, 10vw, 8rem); line-height: 0.85; margin-bottom: 2rem; 
-    text-transform: uppercase; letter-spacing: -0.04em;
+.new-hero h1 {
+    font-family: var(--font-headline); font-weight: 900;
+    font-size: clamp(4.5rem, 11vw, 9.5rem); line-height: 0.88; margin-bottom: 2rem;
+    text-transform: uppercase; letter-spacing: 0.02em;
 }
 .new-hero h1 span.white { color: #fff; display: inline-block; }
 .new-hero h1 span.green {
@@ -93,7 +93,7 @@ h1, h2, h3, .about__headline em {
 /* ── Brutalist Marquee ── */
 .new-marquee { background: var(--surface-container); padding: 1.5rem 0; overflow: hidden; border-top: 1px solid var(--outline-variant); border-bottom: 1px solid var(--outline-variant); }
 .new-marquee__track { display: flex; white-space: nowrap; gap: 3rem; animation: b-marquee 20s linear infinite; }
-.new-marquee__track span { font-family: var(--font-headline); font-weight: 900; font-size: clamp(3rem, 6vw, 6rem); color: transparent; -webkit-text-stroke: 1px rgba(200,145,46,0.35); letter-spacing: 0.05em; }
+.new-marquee__track span { font-family: var(--font-headline); font-weight: 900; font-size: clamp(3.5rem, 7vw, 7rem); color: transparent; -webkit-text-stroke: 1.5px rgba(200,145,46,0.4); letter-spacing: 0.08em; }
 @keyframes b-marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
 /* ── Brutalist Bento Grid ── */
@@ -214,9 +214,9 @@ h1, h2, h3, .about__headline em {
   background: none;
   border: none;
   padding: 0;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-family: var(--font-headline);
-  letter-spacing: .05em;
+  letter-spacing: 0.06em;
   color: var(--text);
   cursor: pointer;
   position: relative;
@@ -373,8 +373,8 @@ h1, h2, h3, .about__headline em {
 .brand-panel__word-display {
   font-family: var(--font-headline);
   font-weight: 900;
-  font-size: clamp(2.2rem, 6vw, 3.2rem);
-  letter-spacing: -0.02em;
+  font-size: clamp(2.5rem, 6vw, 3.8rem);
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   line-height: 1;
   margin-bottom: 0.5rem;
@@ -701,8 +701,9 @@ h1, h2, h3, .about__headline em {
 
 /* ══ HERO TYPEWRITER ════════════════════════════════════════ */
 .hero-typewriter {
-  font-family: var(--font-serif);
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-style: italic;
+  font-weight: 400;
   color: var(--on-surface-variant);
   font-size: 1.05rem;
   line-height: 1.6;
@@ -790,7 +791,7 @@ h1, h2, h3, .about__headline em {
 .footer__col--brand .footer__logo {
   font-size: 1.8rem;
   font-weight: 900;
-  letter-spacing: -0.04em;
+  letter-spacing: 0.04em;
   font-family: var(--font-headline);
   color: var(--text);
   margin-bottom: 0;
@@ -892,9 +893,9 @@ h1, h2, h3, .about__headline em {
   .manifesto__inner { grid-template-columns: 3fr 2fr; align-items: center; }
 }
 .manifesto__eyebrow {
-  font-family: var(--font-label);
-  font-size: 0.7rem;
-  letter-spacing: 0.3em;
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--primary-container);
   margin-bottom: 2.5rem;
@@ -903,10 +904,10 @@ h1, h2, h3, .about__headline em {
 .manifesto__big {
   font-family: var(--font-headline);
   font-weight: 900;
-  font-size: clamp(3.5rem, 8vw, 7rem);
-  line-height: 0.88;
+  font-size: clamp(3.5rem, 8vw, 7.5rem);
+  line-height: 0.9;
   text-transform: uppercase;
-  letter-spacing: -0.03em;
+  letter-spacing: 0.03em;
   margin-bottom: 3rem;
 }
 .manifesto__line { display: block; color: rgba(240,228,204,0.10); }
@@ -940,14 +941,14 @@ h1, h2, h3, .about__headline em {
   letter-spacing: 0.06em;
 }
 .manifesto__card-quote {
-  font-family: var(--font-headline);
-  font-weight: 900;
-  font-size: clamp(1.7rem, 2.8vw, 2.2rem);
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
   text-transform: uppercase;
-  line-height: 1.1;
+  line-height: 1.35;
   color: #F0E4CC;
   margin-bottom: 2rem;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.06em;
 }
 .manifesto__card-bar {
   width: 3rem;
@@ -1003,10 +1004,10 @@ h1, h2, h3, .about__headline em {
 .about__headline {
   font-family: var(--font-headline);
   font-weight: 900;
-  font-size: clamp(3.5rem, 8vw, 7rem);
-  line-height: 0.88;
+  font-size: clamp(3.5rem, 8vw, 7.5rem);
+  line-height: 0.9;
   text-transform: uppercase;
-  letter-spacing: -0.04em;
+  letter-spacing: 0.03em;
   color: #fff;
   margin: 1.2rem 0 2rem;
 }
@@ -1118,9 +1119,9 @@ h1, h2, h3, .about__headline em {
 .process__title {
   font-family: var(--font-headline);
   font-weight: 900;
-  font-size: 1.15rem;
+  font-size: 1.55rem;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   color: #fff;
   margin-bottom: 0.75rem;
 }
@@ -1220,12 +1221,12 @@ h1, h2, h3, .about__headline em {
 .work-card__title {
   font-family: var(--font-headline);
   font-weight: 900;
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
   color: #fff;
   line-height: 1.1;
   margin-bottom: 0.45rem;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.03em;
 }
 .work-card__sub {
   font-size: 0.8rem;
@@ -1833,24 +1834,24 @@ h1, h2, h3, .about__headline em {
 /* ── 3. Hero h1: clean block stack, no flex fighting ── */
 .new-hero h1 {
   display: block !important;
-  line-height: 1 !important;
+  line-height: 0.9 !important;
   margin-bottom: 1.8rem !important;
-  font-size: clamp(4.5rem, 11vw, 9rem) !important;
-  letter-spacing: -0.04em !important;
+  font-size: clamp(4.5rem, 11vw, 9.5rem) !important;
+  letter-spacing: 0.02em !important;
 }
 
-/* "This Is" — Cormorant italic intro, clearly smaller */
+/* "This Is" — intro line, clearly smaller, Cinzel gives it classical elegance */
 .hero-this-is {
   display: block !important;
-  font-family: var(--font-headline) !important;
-  font-size: clamp(1.3rem, 2.8vw, 2.4rem) !important;
+  font-family: 'Cinzel', serif !important;
+  font-size: clamp(1rem, 2.2vw, 2rem) !important;
   font-weight: 400 !important;
-  font-style: italic !important;
-  letter-spacing: 0.1em !important;
-  text-transform: none !important;
+  font-style: normal !important;
+  letter-spacing: 0.28em !important;
+  text-transform: uppercase !important;
   color: rgba(240, 228, 204, 0.45) !important;
   line-height: 1.4 !important;
-  margin-bottom: 0.05em !important;
+  margin-bottom: 0.1em !important;
 }
 [data-theme="light"] .hero-this-is {
   color: rgba(26, 20, 16, 0.38) !important;
